@@ -18,8 +18,17 @@
 {{ macros_head::resource() }}
 {{ macros_head::stylesheet() }}
 
-{% if current_path -%}
-  {% set current_section = current_path | split(pat="/") | nth(n=1) -%}
+{% if page -%}
+  {% set resource = page -%}
+{% elif section -%}
+  {% set resource = section -%}
+{% else %}
+  {# non section or page, eg. 404 #}
+  set resource = null
+{% endif -%}
+
+{% if resource.relative_path -%}
+  {% set current_section = resource.relative_path | split(pat="/") | nth(n=1) -%}
 {% else -%}
   {% set current_section = '/' -%}
 {% endif -%}
@@ -46,7 +55,7 @@
   {% block footer %}
     {{ macros_footer::footer() }}
   {% endblock footer %}
-
+  
   {{ macros_js::javascript() }}  
 </body>
 </html>
