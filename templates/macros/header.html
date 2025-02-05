@@ -46,12 +46,13 @@
 						</li>
 					{% endfor %}
 				{% else %}
-				<li class="nav-item">
-					<a class="nav-link" href="{{ get_url(path="docs", trailing_slash=true) | safe }}">Docs</a>
-				</li>
-				<li class="nav-item">
-					<a class="nav-link" href="{{ get_url(path="blog", trailing_slash=true) | safe }}">Blog</a>
-				</li>
+					{% if mainsec.subsections %}
+						{% for s in mainsec.subsections %}
+							{% set subsection = get_section(path=s) %}
+							<li><a class="nav-link" href="{{ subsection.permalink | safe }}">{{ subsection.title }}</a></li>
+						{% endfor %}
+					{% endif %}
+
 				{% endif %}
 			</ul>
 			<div class="break order-6 d-md-none"></div>
