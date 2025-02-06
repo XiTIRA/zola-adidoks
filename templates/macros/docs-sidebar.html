@@ -1,8 +1,14 @@
 {% macro docs_sidebar(resource) %}
 {% set section_root_path = resource.ancestors | nth(n=1) %}
+{# If this is called on a first level section being displayed as a page, #}
+{# replace blank section path with the resource path #}
+{% if section_root_path != "" %}
+	{% set index = get_section(path=section_root_path) %}
+{% else %}
+	{% set index = resource %}
+{% endif %}
 <div class="col-lg-5 col-xl-4 docs-sidebar">
 	<nav class="docs-links" aria-label="Main navigation">
-			{% set index = get_section(path=section_root_path) %}
 			{% if index.pages %}
 				<h3>{{ index.title }}</h3>
 				<ul class="list-unstyled">

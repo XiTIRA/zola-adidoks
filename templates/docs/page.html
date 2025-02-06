@@ -13,16 +13,16 @@
   <div class="content">
     <div class="row flex-xl-nowrap">
 	  {{ macros_sidebar::docs_sidebar(resource=resource) }}
-	  {{ macros_toc::docs_toc(page=page) }}
+	  {{ macros_toc::docs_toc(page=resource) }}
       <main class="docs-content col-lg-11 col-xl-9">
-        <h1>{{ page.title }}</h1>
-        {% if page.extra.lead %}<p class="lead">{{ page.extra.lead | safe }}</p>{% endif %}
-        {{ page.content | safe }}
+        <h1>{{ resource.title }}</h1>
+        {% if resource.extra.lead %}<p class="lead">{{ resource.extra.lead | safe }}</p>{% endif %}
+        {{ resource.content | safe }}
         {% if config.extra.edit_page %}
           {{ macros_edit_page::docs_edit_page(current_path=current_path) }}
         {% endif %}
         {% if config.extra.navigation %}
-          {{ macros_navigation::docs_navigation(page=page) }}
+          {{ macros_navigation::docs_navigation(page=resource) }}
         {% endif %}
       </main>
     </div>
