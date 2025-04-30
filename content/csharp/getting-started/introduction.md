@@ -18,7 +18,35 @@ top = false
 
 Need to compose some c sharp stuff in here.
 
+{% admonition(type="info",title="Information") %}
+Some information
+{% end %}
 
+{% admonition(type="note",title="Note") %}
+Some notes
+{% end %}
+
+{% admonition(type="tip",title="Tip") %}
+A tip
+{% end %}
+
+{% admonition(type="warning",title="Warning") %}
+Some Warning
+{% end %}
+
+{% admonition(type="danger",title="Danger") %}
+Danger Robinsons!
+{% end %}
+
+{% spoiler() %}
+hello hidden secret
+{% end %}
+
+{% spoiler(fixed_blur=true) %}
+```bash
+echo hiddenSecrets
+```
+{% end %}
 
 ## Header 2
 
@@ -30,7 +58,7 @@ Need to compose some c sharp stuff in here.
 
 some content right above
 
-{% tabs(tabs=["one","two","three"],group="code") %}
+{% tabs(tabs=["c sharp","two","three"],group="code") %}
 {% tab() %}
 hello world
 this is some text
