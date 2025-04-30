@@ -1,0 +1,11 @@
+<div class="tab-wrap">
+
+    {% for tab in tabs %}
+
+    <input type="radio" id="tab-{{tab}}{{group}}" name="{{group}}" class="tab" checked>
+    <label for="tab-{{tab}}{{group}}">{{tab}}</label>
+
+    {% endfor %}
+
+    {{ body  | safe}}
+</div>

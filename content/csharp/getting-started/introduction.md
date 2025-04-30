@@ -28,3 +28,42 @@ Need to compose some c sharp stuff in here.
 
 ## header 2
 
+some content right above
+
+{% tabs(tabs=["one","two","three"],group="code") %}
+{% tab() %}
+hello world
+this is some text
+
+and a new para
+{% end %}
+{% tab() %}
+```bash
+hello world
+```
+{% end %}
+{% tab() %}
+```bash
+Some cheese in here
+```
+{% end %}
+{% end %}
+
+{% tabs(tabs=["one","two","three"],group="cheese") %}
+{% tab() %}
+hello world
+this is some text
+
+and a new para
+{% end %}
+{% tab() %}
+```bash
+hello world
+```
+{% end %}
+{% tab() %}
+```bash
+Some cheese in here
+```
+{% end %}
+{% end %}

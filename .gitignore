@@ -10,3 +10,5 @@ public/*
 # Ignore dev stuff
 notes.md
 todo*.md
+
+.idea
