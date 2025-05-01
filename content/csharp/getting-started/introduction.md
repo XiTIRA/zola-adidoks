@@ -56,7 +56,13 @@ echo hiddenSecrets
 
 ## header 2
 
+> [!NOTE]
+> Useful information that users should know, even when skimming content.
+
 some content right above
+
+{{ aside(text="An Aside Here") }}
+
 
 {% tabs(tabs=["c sharp","two","three"],group="code") %}
 {% tab() %}
@@ -90,8 +96,12 @@ hello world
 ```
 {% end %}
 {% tab() %}
-```bash
-Some cheese in here
+```c#,linenos,name=src/main.rs
+public void main () {};
+public void main () {};
+public void main () {};
+public void main () {};
+
 ```
 {% end %}
 {% end %}

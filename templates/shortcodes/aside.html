@@ -1,0 +1,4 @@
+{%- set text = text | default(value=body) -%}
+<aside>
+    {{ text | markdown | safe }}
+</aside>

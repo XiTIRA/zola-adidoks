@@ -1,0 +1,23 @@
+aside {
+    margin-block-end: max(2.3vmin, 24px);
+    border-radius: 4px;
+    padding-block: 0.8rem;
+    padding-inline: 0rem;
+    font-size: 0.9rem;
+
+    article & p {
+        margin: 0;
+    }
+
+    @media only screen and (min-width: 1300px) {
+        position: absolute;
+        margin-block: 0;
+        transform: translateX(-16rem);
+        border-radius: 0;
+        background: none;
+        padding: 0;
+        width: 14rem;
+        text-align: end;
+
+    }
+}

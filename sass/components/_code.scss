@@ -1,65 +1,124 @@
-pre,
-code,
-kbd,
-samp {
-  font-family: $font-family-monospace;
-  font-size: $font-size-sm;
-  border-radius: $border-radius;
+code {
+  -webkit-text-size-adjust: 100%;
+  border-radius: 5px;
+  padding-inline: 0.2em;
+  padding-block: 0.1em;
+
+  mark {
+    display: block;
+    filter: brightness(110%);
+    background-color: var(--codeblock-highlight);
+    color: inherit;
 }
 
-code {
-  padding: 0.25rem 0.5rem;
+  table {
+      margin: 0rem;
+      padding: 0rem;
+      border-collapse: collapse;
+      border-spacing: 0rem;
+      width: 100%;
+      text-align: start;
+      color: inherit;
+      background-color: inherit;
+
+      td,
+      th,
+      tr {
+          border: none;
+          padding: 0rem;
+          margin: 0rem;
+          background-color: inherit;
+          color: inherit;
+      }
+
+
+
+      // Line number col.
+      tbody td:first-child {     
+             padding-inline-start: 0.5rem;
+          color: inherit;
+          opacity: 100%;
+          padding-inline-end: 0.8rem;
+          width: 1px;  // Without this, iOS Safari centres short lines.
+          user-select: none;
+          text-align: end;
+      }
+
+
+  }
 }
+
+
 
 pre {
-  background: $beige;
-  color: $black;
-  margin: .5rem 0;
-}
-
-pre code {
   display: block;
+  position: relative;
+  border-radius: 5px;
+  padding-inline: 1rem;
+  padding-block-start: 2.4rem;
+  padding-block-end: 1rem;
+  overflow: hidden;
   overflow-x: auto;
-  line-height: $line-height-base;
-  padding: 1.25rem 1.5rem;
-  tab-size: 4;
-  scrollbar-width: thin;
-  scrollbar-color: transparent transparent;
+  line-height: 1.4;
 
-
-}
-
-.hljs {
-  padding: 1.25rem 1.5rem;
-}
-
-@include media-breakpoint-down(sm) {
-  pre,
   code,
-  kbd,
-  samp {
-    border-radius: 0;
+  code td {
+      font-size: 0.9rem;  // Fits ~77 characters.
   }
 
-  pre {
-    margin: .5rem -1.5rem;
+  // Supports both native Zola way of adding src, and old shortcode-based logic.
+  // See: https://github.com/welpo/tabi/pull/489
+  &::after,
+  code .source-path {
+      display: block;
+      position: absolute;
+      top: 0;
+      inset-inline-end: 1.3rem;
+      padding-top: 0.3rem;
+      padding-inline-end: 1.3rem;
+      max-width: calc(100% - 14em);
+      height: 1.4rem;
+      overflow: hidden;
+      content: attr(data-name);
+      font-size: 0.65rem;
+      text-align: end;
+      text-overflow: ellipsis;
+      white-space: nowrap;
+  }
+
+  code {
+      display: block;
+      border: 0rem;
+      border-radius: 5px;
+      padding: 0rem;
+      overflow-x: auto;
+      white-space: pre;
+
+      &::before {
+          display: block;
+          position: absolute;
+          top: 0;
+          inset-inline-start: 0;
+          padding: 0.3rem;
+          padding-inline-start: 1rem;
+          width: calc(100% - 1.3rem);
+          height: 0.9rem;
+          content: attr(data-lang);
+          font-size: 0.65rem;
+          text-align: start;
+          text-transform: uppercase;
+      }
   }
 }
 
-pre code::-webkit-scrollbar {
-  height: 5px;
+// Default to LTR codeblocks.
+code, pre {
+  direction: ltr;
 }
 
-pre code::-webkit-scrollbar-thumb {
-  background: $gray-200;
+// Allows RTL codeblocks if `force_codeblock_ltr` is set to false.
+html[data-code-direction="inherit"] {
+  code, pre {
+      direction: inherit;
+  }
 }
-
-pre code:hover {
-  scrollbar-width: thin;
-  scrollbar-color: $gray-200 transparent;
-}
-
-pre code::-webkit-scrollbar-thumb:hover {
-  background: $gray-200;
-}
-
