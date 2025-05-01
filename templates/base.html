@@ -10,7 +10,7 @@
 {% import 'macros/docs-navigation.html' as macros_navigation -%}
 {% import 'macros/docs-toc.html' as macros_toc -%}
 <!DOCTYPE html>
-<html lang="{{ config.extra.language_code | default(value="en-US") }}" data-theme="dark">
+<html lang="{{ config.extra.language_code | default(value="en-US") }}" data-theme="light">
 <head>
 <meta charset="utf-8">
 <meta http-equiv="x-ua-compatible" content="ie=edge">
@@ -56,6 +56,8 @@
     {{ macros_footer::footer() }}
   {% endblock footer %}
   
-  {{ macros_js::javascript() }}  
+  {{ macros_js::javascript() }}
+  {%- include "partials/extra_features.html" -%}
+
 </body>
 </html>

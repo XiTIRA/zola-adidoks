@@ -42,7 +42,7 @@ highlight_code = true
 # To use a Zola built-in theme, CSP needs to allow unsafe-inline for style-src.
 highlight_theme = "solarized-dark" # options: solarized-light, solarized-dark, dracula, github, github-dark, github-light, monokai, monokai-sublime, nord, oceanic-next, one-dark-pro, one-light-pro, tomorrow-night-eighties, tomorrow-night-blue, tomorrow-night-bright, tomorrow-night-orange, tomorrow-night-purple
 [extra]
-
+mermaid = true
 # Enable navigation between pages
 navigation = true
 

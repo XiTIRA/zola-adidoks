@@ -105,3 +105,30 @@ public void main () {};
 ```
 {% end %}
 {% end %}
+
+{% mermaid() %}
+
+classDiagram
+class CognitiveDistortions {
++AllOrNothingThinking()
++Overgeneralization()
++MentalFilter()
++JumpingToConclusions()
+}
+class AllOrNothingThinking {
++SeeInExtremes()
+}
+class Overgeneralization {
++GeneralizeFromSingle()
+}
+class MentalFilter {
++FocusOnNegative()
+}
+class JumpingToConclusions {
++MakeAssumptions()
+}
+CognitiveDistortions *-- AllOrNothingThinking
+CognitiveDistortions *-- Overgeneralization
+CognitiveDistortions *-- MentalFilter
+CognitiveDistortions *-- JumpingToConclusions
+{% end %}

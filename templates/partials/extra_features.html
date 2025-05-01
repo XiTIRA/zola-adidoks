@@ -1,0 +1,6 @@
+{# Load mermaid.js #}
+{%- if config.extra.serve_local_mermaid | default(value=true) -%}
+<script defer src="{{ get_url(path='js/mermaid.min.js', trailing_slash=false) | safe }}"></script>
+{%- else -%}
+<script defer src="https://cdn.jsdelivr.net/npm/mermaid@latest/dist/mermaid.min.js"></script>
+{%- endif -%}
