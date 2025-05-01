@@ -37,11 +37,10 @@ include_description = true
 include_content = true
 
 [markdown]
-# Whether to do syntax highlighting.
-# Theme can be customised by setting the `highlight_theme`
-# variable to a theme supported by Zola
-highlight_code = true
 
+highlight_code = true
+# To use a Zola built-in theme, CSP needs to allow unsafe-inline for style-src.
+highlight_theme = "solarized-dark" # options: solarized-light, solarized-dark, dracula, github, github-dark, github-light, monokai, monokai-sublime, nord, oceanic-next, one-dark-pro, one-light-pro, tomorrow-night-eighties, tomorrow-night-blue, tomorrow-night-bright, tomorrow-night-orange, tomorrow-night-purple
 [extra]
 
 # Enable navigation between pages
